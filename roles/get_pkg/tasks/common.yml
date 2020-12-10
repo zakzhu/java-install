@@ -35,7 +35,7 @@
 - name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package['name'] }}"
   unarchive:
     src: "/tmp/{{ package_tarball }}"
-    dest: /usr/local/src/
+    dest: "/usr/local/install/{{ package['name'] }}"
     #owner:
     #group:
     #mode:
