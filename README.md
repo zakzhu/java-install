@@ -12,7 +12,14 @@ Ansible playbook for java installation.
 
 ## Features
 
+Support java distribution type:
 
+- Adopt OpenJDK 
+- Alibaba Dragonwell
+- Amazon Corretto
+- Liberica OpenJDK
+- Tencent Kona
+- Oracle JDK
 
 ## Requirements
 
@@ -35,17 +42,26 @@ git clone https://github.com/zakzhu/java-install.git
 ## Usage
 
 ```bash
-vim java-install/inventories/production/host_vars/localhost.yml
+vim java-install/inventories/staging/host_vars/localhost.yml
 ```
 
 > EXAMPLE:
 >
 > ```yaml
+> ########################
+> # Adopt OpenJDK
+> ########################
+> package:
+>   name: adopt_openjdk
+>   version: 8u275b01
+>   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
 > 
+> package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
+> dgst_algo: sha256
 > ```
 
 ```bash
-ansible-playbook -i inventories/production/inventory site.yml
+ansible-playbook -i inventories/staging/inventory site.yml
 ```
 
 ```bash
