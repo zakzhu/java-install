@@ -19,6 +19,7 @@
 
 # package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
 # dgst_algo: sha256
+
 ########################
 # Alibaba Dragonwell
 ########################
@@ -66,10 +67,10 @@
 ########################
 # Oracle JDK
 ########################
-# package:
-#   name: oracle_jdk
-#   version: 8u202
-#   checksum: 0029351f7a946f6c05b582100c7d45b7
+package:
+  name: oracle_jdk
+  version: 8u202
+  checksum: 0029351f7a946f6c05b582100c7d45b7
 
-# package_tarball: "jdk-8u202-linux-x64.tar.gz"
-# dgst_algo: md5
+package_tarball: "jdk-8u202-linux-x64.tar.gz"
+dgst_algo: md5
