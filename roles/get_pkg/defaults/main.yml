@@ -13,14 +13,14 @@
 #   - Tencent Kona          https://github.com/Tencent/TencentKona-8/releases
 #   - Oracle JDK            https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
 package:
-  name: adopt_openjdk
-  version: 8u275b01
-  checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
+  name:
+  version:
+  checksum:
 
 package_fullname: "{{ package['name'] }}-{{ package['version'] }}"
-package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
+package_tarball:
 
 package_url:
 
 # FROM TASK: "<r_get_pkg_t_common> calculate checksum of {{ package_tarball }}"
-dgst_algo: sha256
+dgst_algo:
