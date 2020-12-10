@@ -1,0 +1,26 @@
+---
+# defaults file for get_pkg
+
+# FROM TASK: "<r_get_pkg_t_copy_local> copy a {{ package_tarball }} to /tmp/"
+# FROM TASK: "<r_get_pkg_t_copy_remote> download file {{ package_tarball }}"
+# FROM TASK: "<r_get_pkg_t_common> verify checksum of {{ package_tarball }}"
+
+# JDK Pacakge Name:
+#   - Adopt OpenJDK         https://github.com/AdoptOpenJDK/openjdk8-binaries/releases
+#   - Alibaba Dragonwell    https://github.com/alibaba/dragonwell8/releases
+#   - Amazon Corretto       https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html
+#   - Liberica OpenJDK      https://bell-sw.com/pages/downloads/#/java-8-lts
+#   - Tencent Kona          https://github.com/Tencent/TencentKona-8/releases
+#   - Oracle JDK            https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+package:
+  name: adopt-openjdk
+  version: 8u275b01
+  checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
+
+# package_fullname: "{{ package['name'].capitalize() }}-{{ package['version'] }}"
+package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
+
+package_url:
+
+# FROM TASK: "<r_get_pkg_t_common> calculate checksum of {{ package_tarball }}"
+dgst_algo: sha256
