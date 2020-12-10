@@ -1,6 +1,6 @@
 ---
 - name: source profile
-  shell:
+  command:
   #become: yes
   #become_method: su
   #become_user:

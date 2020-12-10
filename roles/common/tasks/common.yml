@@ -1,5 +1,5 @@
 ---
-- name: "<r_build_t_common> create a symbolic link to /usr/local/java"
+- name: "<r_common_t_common> create a symbolic link to /usr/local/java"
   file:
     src: "/usr/local/install/{{ package_fullname }}"
     dest: "/usr/local/java"

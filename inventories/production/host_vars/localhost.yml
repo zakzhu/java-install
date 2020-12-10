@@ -45,24 +45,24 @@
 ########################
 # Liberica OpenJDK
 ########################
-package:
-  name: liberica_openjdk
-  version: 8u275b01
-  checksum: 9765e1bef8666c9308070cd2b17f677a16460f75
+# package:
+#   name: liberica_openjdk
+#   version: 8u275b01
+#   checksum: 9765e1bef8666c9308070cd2b17f677a16460f75
 
-package_tarball: "bellsoft-jdk8u275+1-linux-amd64.tar.gz"
-dgst_algo: sha1
+# package_tarball: "bellsoft-jdk8u275+1-linux-amd64.tar.gz"
+# dgst_algo: sha1
+
 ########################
 # Tencent Kona
 ########################
-# package:
-#   name: tencent_kona
-#   version:
-#   checksum:
+package:
+  name: tencent_kona
+  version: 8.0.3
+  checksum: afd1739dc029e9c2a05a04297078becd
 
-# package_tarball: ""
-# dgst_algo: sha256
-
+package_tarball: "TencentKona8.0.3.b2_jdk_linux-x86_64_8u262.tar.gz"
+dgst_algo: md5
 ########################
 # Oracle JDK
 ########################
