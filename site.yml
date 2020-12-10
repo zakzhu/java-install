@@ -24,6 +24,12 @@
     - when: status == '0'
       block:
         - import_role:
+            name: get_pkg
+          tags:
+            - r_get_pkg
+        - meta: flush_handlers
+
+        - import_role:
             name: common
           tags:
             - r_common
