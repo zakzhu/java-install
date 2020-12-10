@@ -24,7 +24,15 @@
   vars:
     checksum: "{{ checksum_result['stdout'].split('= ')[1] }}"
 
-- name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/src/"
+- name: "<r_get_pkg_t_common> create directory /usr/local/install/{{ package['name'] }}"
+  file:
+    path: "/usr/local/install/{{ package['name'] }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package['name'] }}"
   unarchive:
     src: "/tmp/{{ package_tarball }}"
     dest: /usr/local/src/
