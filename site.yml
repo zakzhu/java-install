@@ -35,6 +35,8 @@
             - r_common
         - meta: flush_handlers
 
+    - shell: java -version
+
   post_tasks:
     - when: status == '0'
       block:
