@@ -1,7 +1,9 @@
 # Java-Install
 
-[![build status][shield-build]][info-build]
-[![gitter room][shield-gitter]][info-gitter]
+<!-- [![build status][shield-build]][info-build] -->
+
+<!-- [![gitter room][shield-gitter]][info-gitter] -->
+
 [![license][shield-license]][info-license]
 [![release][shield-release]][info-release]
 [![prs welcome][shield-prs]][info-prs]
@@ -14,7 +16,7 @@ Ansible playbook for java installation.
 
 Support java distribution type:
 
-- Adopt OpenJDK 
+- Adopt OpenJDK
 - Alibaba Dragonwell
 - Amazon Corretto
 - Liberica OpenJDK
@@ -55,7 +57,7 @@ vim java-install/inventories/staging/host_vars/localhost.yml
 >   name: adopt_openjdk
 >   version: 8u275b01
 >   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
-> 
+>
 > package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
 > dgst_algo: sha256
 > ```
@@ -94,7 +96,6 @@ Copyright &copy; 2020, Zak Zhu
 [info-license]: LICENSE
 [info-release]: https://github.com/zakzhu/java-install/releases
 [info-prs]: https://github.com/zakzhu/java-install/pulls
-
 [shield-build]: https://img.shields.io/travis/zakzhu/java-install
 [shield-gitter]: https://img.shields.io/gitter/room/zakzhu/java-install
 [shield-license]: https://img.shields.io/github/license/zakzhu/java-install
