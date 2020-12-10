@@ -1,0 +1,6 @@
+---
+# defaults file for clean
+
+# FROM TASK: <po_r_clean_t_common> remove temporary files
+tmp_files:
+  - "{{ package_tarball }}"

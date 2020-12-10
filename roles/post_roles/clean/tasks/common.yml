@@ -1,0 +1,6 @@
+---
+- name: <po_r_clean_t_common> remove temporary files
+  file:
+    path: "/tmp/{{ item }}"
+    state: absent
+  loop: "{{ tmp_files }}"
