@@ -49,7 +49,7 @@
     #hidden: yes
   register: find_bin_result
 
-- name: "<r_common_t_common> template a file to /etc/profile.d/{{ package['name'] }}.sh"
+- name: "<r_common_t_common> template a file to /etc/profile.d/java.sh"
   template:
     src: "java.sh.j2"
     dest: "/etc/profile.d/java.sh"
