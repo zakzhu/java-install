@@ -1,4 +1,4 @@
 {% for i in find_bin_result['files'] %}
-PATH={{ $i['path'] }}:$PATH
+PATH={{ i['path'] }}:$PATH
 {% endfor %}
 export PATH

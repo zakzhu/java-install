@@ -41,6 +41,7 @@
 
     # Choices: any, directory, file, link
     file_type: directory
+    depth: 2
     recurse: yes
     #excludes:
     #  -

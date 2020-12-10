@@ -24,9 +24,9 @@
   vars:
     checksum: "{{ checksum_result['stdout'].split('= ')[1] }}"
 
-- name: "<r_get_pkg_t_common> create directory /usr/local/install/{{ package['name'] }}"
+- name: "<r_get_pkg_t_common> create directory /usr/local/install/{{ package_fullname }}"
   file:
-    path: "/usr/local/install/{{ package['name'] }}"
+    path: "/usr/local/install/{{ package_fullname }}"
     state: directory
     owner: root
     group: root
