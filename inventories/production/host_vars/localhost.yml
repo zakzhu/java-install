@@ -7,22 +7,22 @@
 #   - Oracle JDK            https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
 
 # Adopt OpenJDK
-package:
-  name: adopt_openjdk
-  version: 8u275b01
-  checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
-
-package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
-dgst_algo: sha256
-# Alibaba Dragonwell
 # package:
-#   name: alibaba_dragonwell
-#   version:
-#   checksum:
+#   name: adopt_openjdk
+#   version: 8u275b01
+#   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
 
-# package_tarball: ""
+# package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
 # dgst_algo: sha256
 
+# Alibaba Dragonwell
+package:
+  name: alibaba_dragonwell
+  version:
+  checksum:
+
+package_tarball: ""
+dgst_algo: sha256
 # Amazon Corretto
 # package:
 #   name: amazon_corretto
