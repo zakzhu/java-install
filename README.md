@@ -32,14 +32,29 @@ Support java distribution type:
   - ansible
 
 ## Installation
+- ```bash
+  yum -y install ansible
+  ```
 
-```bash
-yum -y install ansible
-```
+- ```bash
+  git clone https://github.com/zakzhu/java-install.git
+  ```
 
-```bash
-git clone https://github.com/zakzhu/java-install.git
-```
+- Download the relevant openjdk tarball from the following website:
+
+  > ```yaml
+  > # JDK Pacakge Name:
+  > #   - Adopt OpenJDK         https://github.com/AdoptOpenJDK/openjdk8-binaries/releases
+  > #   - Alibaba Dragonwell    https://github.com/alibaba/dragonwell8/releases
+  > #   - Amazon Corretto       https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html
+  > #   - Liberica OpenJDK      https://bell-sw.com/pages/downloads/#/java-8-lts
+  > #   - Tencent Kona          https://github.com/Tencent/TencentKona-8/releases
+  > #   - Oracle JDK            https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
+  > ```
+
+- ```bash
+  cp OPENJDK-TARBALL java-install/roles/get_pkg/files/
+  ```
 
 ## Usage
 
