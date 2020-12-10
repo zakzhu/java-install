@@ -32,10 +32,10 @@
     group: root
     mode: "0755"
 
-- name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package['name'] }}"
+- name: "<r_get_pkg_t_common> extract /tmp/{{ package_tarball }} into /usr/local/install/{{ package_fullname }}"
   unarchive:
     src: "/tmp/{{ package_tarball }}"
-    dest: "/usr/local/install/{{ package['name'] }}"
+    dest: "/usr/local/install/{{ package_fullname }}"
     #owner:
     #group:
     #mode:

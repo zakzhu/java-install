@@ -1,8 +1,17 @@
 ---
-- name: "<r_common_t_common> find binary path in /usr/local/{{ package['name'] }}"
+- name: "<r_build_t_common> create a symbolic link to /usr/local/java"
+  file:
+    src: "/usr/local/install/{{ package_fullname }}"
+    dest: "/usr/local/java"
+    owner: root
+    group: root
+    #mode:
+    state: link
+
+- name: "<r_common_t_common> find binary path in /usr/local/java"
   find:
     paths:
-      - /usr/local/{{ package['name'] }}
+      - /usr/local/java
 
     patterns:
       - bin
@@ -41,8 +50,8 @@
 
 - name: "<r_common_t_common> template a file to /etc/profile.d/{{ package['name'] }}.sh"
   template:
-    src: "{{ package['name'] }}.sh.j2"
-    dest: "/etc/profile.d/{{ package['name'] }}.sh"
+    src: "java.sh.j2"
+    dest: "/etc/profile.d/java.sh"
     owner: root
     group: root
     mode: "0644"
