@@ -43,3 +43,9 @@
           tags:
             - po_r_common
         - meta: flush_handlers
+
+        - import_role:
+            name: post_roles/clean
+          tags:
+            - po_r_clean
+        - meta: flush_handlers
