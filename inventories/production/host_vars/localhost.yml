@@ -56,20 +56,21 @@
 ########################
 # Tencent Kona
 ########################
-package:
-  name: tencent_kona
-  version: 8.0.3
-  checksum: afd1739dc029e9c2a05a04297078becd
+# package:
+#   name: tencent_kona
+#   version: 8.0.3
+#   checksum: afd1739dc029e9c2a05a04297078becd
 
-package_tarball: "TencentKona8.0.3.b2_jdk_linux-x86_64_8u262.tar.gz"
-dgst_algo: md5
+# package_tarball: "TencentKona8.0.3.b2_jdk_linux-x86_64_8u262.tar.gz"
+# dgst_algo: md5
+
 ########################
 # Oracle JDK
 ########################
-# package:
-#   name: oracle_jdk
-#   version:
-#   checksum:
+package:
+  name: oracle_jdk
+  version: 8u202
+  checksum: 0029351f7a946f6c05b582100c7d45b7
 
-# package_tarball: ""
-# dgst_algo:
+package_tarball: "jdk-8u202-linux-x64.tar.gz"
+dgst_algo: md5

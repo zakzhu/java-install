@@ -58,4 +58,3 @@
     mode: "0644"
     #validate:
     #backup: yes
-  notify: source profile
