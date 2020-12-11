@@ -32,6 +32,7 @@ Support java distribution type:
   - ansible
 
 ## Installation
+
 - ```bash
   yum -y install ansible
   ```
@@ -69,7 +70,7 @@ vim java-install/inventories/staging/host_vars/localhost.yml
 > # Adopt OpenJDK
 > ########################
 > package:
->   name: adopt_openjdk
+>   name: adopt-openjdk
 >   version: 8u275b01
 >   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
 >
