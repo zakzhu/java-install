@@ -13,7 +13,7 @@
 # Adopt OpenJDK
 ########################
 # package:
-#   name: adopt_openjdk
+#   name: adopt-openjdk
 #   version: 8u275b01
 #   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
 
@@ -24,7 +24,7 @@
 # Alibaba Dragonwell
 ########################
 # package:
-#   name: alibaba_dragonwell
+#   name: alibaba-dragonwell
 #   version: 8.5.4
 #   checksum: 14094bf3278aa3e6fe22b91f69fc3f29aa547ffaef0ec19cdce584b86a1a864a
 
@@ -35,7 +35,7 @@
 # Amazon Corretto
 ########################
 # package:
-#   name: amazon_corretto
+#   name: amazon-corretto
 #   version: 8u275b01
 #   checksum: 6dc1ccea65e1112a3a8673e776c932d1
 
@@ -46,7 +46,7 @@
 # Liberica OpenJDK
 ########################
 # package:
-#   name: liberica_openjdk
+#   name: liberica-openjdk
 #   version: 8u275b01
 #   checksum: 9765e1bef8666c9308070cd2b17f677a16460f75
 
@@ -57,7 +57,7 @@
 # Tencent Kona
 ########################
 # package:
-#   name: tencent_kona
+#   name: tencent-kona
 #   version: 8.0.3
 #   checksum: afd1739dc029e9c2a05a04297078becd
 
@@ -68,7 +68,7 @@
 # Oracle JDK
 ########################
 # package:
-#   name: oracle_jdk
+#   name: oracle-jdk
 #   version: 8u202
 #   checksum: 0029351f7a946f6c05b582100c7d45b7
 
