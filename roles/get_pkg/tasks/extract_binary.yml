@@ -17,3 +17,4 @@
     # If the specified absolute path (file or directory) already
     # exists, this step will *not* be run.
     #creates:
+  register: unarchive_result

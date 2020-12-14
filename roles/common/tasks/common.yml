@@ -1,17 +1,17 @@
 ---
-- name: "<r_common_t_common> create a symbolic link to /usr/local/java"
+- name: "<r_common_t_common> create a symbolic link to {{ deploy_root }}/java"
   file:
-    src: "/usr/local/install/{{ package_fullname }}"
-    dest: "/usr/local/java"
+    src: "{{ deploy_root }}/install/{{ package_fullname }}"
+    dest: "{{ deploy_root }}/java"
     owner: root
     group: root
     #mode:
     state: link
 
-- name: "<r_common_t_common> find binary path in /usr/local/java"
+- name: "<r_common_t_common> find binary path in {{ deploy_root }}/java"
   find:
     paths:
-      - /usr/local/java
+      - "{{ deploy_root }}/java"
 
     patterns:
       - bin
