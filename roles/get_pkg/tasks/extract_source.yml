@@ -17,3 +17,7 @@
     # If the specified absolute path (file or directory) already
     # exists, this step will *not* be run.
     #creates:
+  register: unpack_result
+
+- set_fact:
+    archive_root: "{{ unpack_result['files'][0] }}"

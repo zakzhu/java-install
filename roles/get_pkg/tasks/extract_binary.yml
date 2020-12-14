@@ -17,4 +17,21 @@
     # If the specified absolute path (file or directory) already
     # exists, this step will *not* be run.
     #creates:
-  register: unarchive_result
+  register: unpack_result
+
+- set_fact:
+    archive_root: "{{ unpack_result['files'][0] }}"
+
+- name: "<r_get_pkg_t_extract> create a hard link to {{ deploy_root }}/install/{{ package_fullname }}"
+  file:
+    src: "{{ deploy_root }}/install/{{ archive_root }}"
+    dest: "{{ deploy_root }}/install/{{ package_fullname }}"
+    #owner:
+    #group:
+    #mode:
+    state: hard
+
+- name: "<r_get_pkg_t_extract> remove {{ deploy_root }}/install/{{ archive_root }}"
+  file:
+    path: "{{ deploy_root }}/install/{{ archive_root }}"
+    state: absent

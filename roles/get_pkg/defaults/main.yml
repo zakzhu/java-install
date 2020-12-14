@@ -13,8 +13,8 @@ package:
   # Choices: source, binary
   type:
 
-package_fullname: "{{ package['name'].capitalize() }}-{{ package['version'] }}"
-package_tarball: "{{ package_fullname }}.tar.xz"
+package_fullname: "{{ package['name'] }}-{{ package['version'] }}"
+package_tarball:
 
 package_url:
 
