@@ -17,6 +17,7 @@
     # If the specified absolute path (file or directory) already
     # exists, this step will *not* be run.
     #creates:
+    list_files: yes
   register: unpack_result
 
 - set_fact:
