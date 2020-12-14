@@ -16,6 +16,7 @@ deploy_root:
 #   - Oracle JDK            https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
 package:
   name:
+  alias: java
   version:
   checksum:
   # Choices: source, binary

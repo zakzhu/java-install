@@ -1,17 +1,17 @@
 ---
-- name: "<r_common_t_common> create a symbolic link to {{ deploy_root }}/java"
+- name: "<r_common_t_common> create a symbolic link to {{ deploy_root }}/{{ package['alias'] }}"
   file:
     src: "{{ deploy_root }}/install/{{ package_fullname }}"
-    dest: "{{ deploy_root }}/java"
-    owner: root
-    group: root
+    dest: "{{ deploy_root }}/{{ package['alias'] }}"
+    #owner:
+    #group:
     #mode:
     state: link
 
-- name: "<r_common_t_common> find binary path in {{ deploy_root }}/java"
+- name: "<r_common_t_common> find binary path in {{ deploy_root }}/{{ package['alias'] }}"
   find:
     paths:
-      - "{{ deploy_root }}/java"
+      - "{{ deploy_root }}/{{ package['alias'] }}"
 
     patterns:
       - bin
@@ -41,18 +41,18 @@
 
     # Choices: any, directory, file, link
     file_type: directory
-    depth: 2
-    recurse: yes
+    #depth:
+    #recurse: yes
     #excludes:
     #  -
     #use_regex: yes
     #hidden: yes
   register: find_bin_result
 
-- name: "<r_common_t_common> template a file to /etc/profile.d/java.sh"
+- name: "<r_common_t_common> template a file to /etc/profile.d/{{ package['alias'] }}.sh"
   template:
-    src: "java.sh.j2"
-    dest: "/etc/profile.d/java.sh"
+    src: "{{ package['alias'] }}.sh.j2"
+    dest: "/etc/profile.d/{{ package['alias'] }}.sh"
     owner: root
     group: root
     mode: "0644"
