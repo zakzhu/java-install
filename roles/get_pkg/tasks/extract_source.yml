@@ -1,0 +1,19 @@
+---
+- name: "<r_get_pkg_t_extract> create directory {{ deploy_root }}/src"
+  file:
+    path: "{{ deploy_root }}/src"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: "<r_get_pkg_t_extract> extract /tmp/{{ package_tarball }} into {{ deploy_root }}/src/"
+  unarchive:
+    src: "/tmp/{{ package_tarball }}"
+    dest: "{{ deploy_root }}/src/"
+    #owner:
+    #group:
+    #mode:
+    # If the specified absolute path (file or directory) already
+    # exists, this step will *not* be run.
+    #creates:

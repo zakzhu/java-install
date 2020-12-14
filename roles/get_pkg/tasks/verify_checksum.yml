@@ -1,0 +1,25 @@
+---
+- name: "<r_get_pkg_t_verify_checksum> calculate checksum of {{ package_tarball }}"
+  command:
+  #become: yes
+  #become_method: su
+  #become_user:
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: "openssl dgst -{{ dgst_algo }} /tmp/{{ package_tarball }}"
+    #chdir:
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+  register: checksum_result
+
+- name: "<r_get_pkg_t_verify_checksum> verify checksum of {{ package_tarball }}"
+  fail:
+    msg: "The package is corrupted, please try again!" # not required. The customized message used for failing execution. If omitted, fail will simply bail out with a generic message.
+  when: checksum != package['checksum']
+  vars:
+    checksum: "{{ checksum_result['stdout'].split('= ')[1] }}"

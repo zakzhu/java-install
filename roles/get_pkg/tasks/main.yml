@@ -1,14 +1,22 @@
 ---
 # tasks file for get_pkg
 
-# - import_tasks: copy_remote.yml
-#   tags:
-#     - r_get_pkg_t_copy_remote
+- import_tasks: copy_remote.yml
+  tags:
+    - r_get_pkg_t_copy_remote
 #
-- import_tasks: copy_local.yml
+# - import_tasks: copy_local.yml
+#   tags:
+#     - r_get_pkg_t_copy_local
+#
+- import_tasks: verify_checksum.yml
   tags:
-    - r_get_pkg_t_copy_local
+    - r_get_pkg_t_verify_checksum
 
-- import_tasks: common.yml
+- include_tasks:
+    file: "extract_{{ package['type'] }}.yml"
+    apply:
+      tags:
+        - r_get_pkg_t_extract
   tags:
-    - r_get_pkg_t_common
+    - r_get_pkg_t_extract
