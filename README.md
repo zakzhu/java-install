@@ -66,16 +66,20 @@ vim java-install/inventories/staging/host_vars/localhost.yml
 > EXAMPLE:
 >
 > ```yaml
+> deploy_root: /usr/local
+>
 > ########################
 > # Adopt OpenJDK
 > ########################
 > package:
 >   name: adopt-openjdk
+>   alias: java
 >   version: 8u275b01
+>   dgst_algo: sha256
 >   checksum: 06fb04075ed503013beb12ab87963b2ca36abe9e397a0c298a57c1d822467c29
+>   type: binary
 >
 > package_tarball: "OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz"
-> dgst_algo: sha256
 > ```
 
 ```bash
