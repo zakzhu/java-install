@@ -23,14 +23,21 @@
 - set_fact:
     archive_root: "{{ unpack_result['files'][0] }}"
 
-- name: "<r_get_pkg_t_extract> create a hard link to {{ deploy_root }}/install/{{ package_fullname }}"
-  file:
+- name: "<r_get_pkg_t_extract> copy a file to {{ deploy_root }}/install/{{ package_fullname }}"
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
     src: "{{ deploy_root }}/install/{{ archive_root }}"
     dest: "{{ deploy_root }}/install/{{ package_fullname }}"
-    #owner:
-    #group:
-    #mode:
-    state: hard
+    owner: root
+    group: root
+    mode: "0755"
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
 
 - name: "<r_get_pkg_t_extract> remove {{ deploy_root }}/install/{{ archive_root }}"
   file:

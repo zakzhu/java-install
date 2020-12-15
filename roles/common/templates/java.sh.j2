@@ -1,3 +1,5 @@
+{{ package['alias'].upper() }}_HOME={{ deploy_root }}/{{ package['alias'] }}
+export {{ package['alias'].upper() }}_HOME
 {% for i in find_bin_result['files'] %}
 PATH={{ i['path'] }}:$PATH
 {% endfor %}
