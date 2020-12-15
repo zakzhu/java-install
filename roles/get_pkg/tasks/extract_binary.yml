@@ -20,26 +20,23 @@
     list_files: yes
   register: unpack_result
 
-- set_fact:
+- name: set variable archive_root
+  set_fact:
     archive_root: "{{ unpack_result['files'][0] }}"
 
-- name: "<r_get_pkg_t_extract> copy a file to {{ deploy_root }}/install/{{ package_fullname }}"
-  copy:
-    # if path ends with "/", only inside contents of that
-    # directory are copied to destination.
-    # if it does not end with "/", the directory itself
-    # with all contents is copied.
-    src: "{{ deploy_root }}/install/{{ archive_root }}"
-    dest: "{{ deploy_root }}/install/{{ package_fullname }}"
-    owner: root
-    group: root
-    mode: "0755"
-    #backup: yes
-    # The validation command to run before copying into place.
-    # E.g. `validate: /usr/sbin/visudo -csf %s`
-    #validate:
+- name: "<r_get_pkg_t_extract> rename the file to {{ deploy_root }}/install/{{ package_fullname }}"
+  command:
+  #become: yes
+  #become_method: su
+  #become_user:
+  #become_flags: "-s /bin/sh"
+  args:
+    cmd: "mv {{ archive_root }} {{ package_fullname }}"
+    chdir: "{{ deploy_root }}/install"
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    creates: "{{ package_fullname }}"
 
-- name: "<r_get_pkg_t_extract> remove {{ deploy_root }}/install/{{ archive_root }}"
-  file:
-    path: "{{ deploy_root }}/install/{{ archive_root }}"
-    state: absent
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:

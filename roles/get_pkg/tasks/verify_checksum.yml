@@ -19,7 +19,7 @@
 
 - name: "<r_get_pkg_t_verify_checksum> verify checksum of {{ package_tarball }}"
   fail:
-    msg: "The package is corrupted, please try again!" # not required. The customized message used for failing execution. If omitted, fail will simply bail out with a generic message.
+    msg: "The package is corrupted, please try again!"
   when: checksum != package['checksum']
   vars:
     checksum: "{{ checksum_result['stdout'].split('= ')[1] }}"

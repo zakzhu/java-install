@@ -20,5 +20,6 @@
     list_files: yes
   register: unpack_result
 
-- set_fact:
+- name: set variable archive_root
+  set_fact:
     archive_root: "{{ unpack_result['files'][0] }}"
