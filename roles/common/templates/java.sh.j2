@@ -1,4 +1,5 @@
 {{ package['alias'].upper() }}_HOME={{ deploy_root }}/{{ package['alias'] }}
 PATH=${{ package['alias'].upper() }}_HOME/bin:$PATH
+
 export {{ package['alias'].upper() }}_HOME
 export PATH
