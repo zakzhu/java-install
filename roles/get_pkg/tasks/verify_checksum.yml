@@ -6,7 +6,7 @@
   #become_user:
   #become_flags: "-s /bin/sh"
   args:
-    cmd: "openssl dgst -{{ pacakge['dgst_algo'] }} /tmp/{{ package_tarball }}"
+    cmd: "openssl dgst -{{ packge['dgst_algo'] }} /tmp/{{ package_tarball }}"
     #chdir:
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *won't* be run.
