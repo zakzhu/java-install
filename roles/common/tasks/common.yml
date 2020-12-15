@@ -8,47 +8,6 @@
     #mode:
     state: link
 
-- name: "<r_common_t_common> find binary path in {{ deploy_root }}/{{ package['alias'] }}"
-  find:
-    paths:
-      - "{{ deploy_root }}/{{ package['alias'] }}"
-
-    patterns:
-      - bin
-      - sbin
-
-    # Select files whose age is equal to or greater than the
-    # specified time.
-    # Use a negative age to find files equal to or less than the
-    # specified time.
-    # You can choose seconds, minutes, hours, days, or weeks by
-    # specifying the first letter of any of those words
-    # (e.g.,"1w").
-    #age:
-
-    # Choices: atime, ctime, mtime
-    #age_stamp: mtime
-
-    # Select files whose size is equal to or greater than the
-    # specified size.
-    # Use a negative size to find files equal to or less than the
-    # specified size.
-    # Unqualified values are in bytes but b, k, m, g, and t can be
-    # appended to specify bytes, kilobytes, megabytes, gigabytes,
-    # and terabytes, respectively.
-    # Size is not evaluated for directories.
-    #size:
-
-    # Choices: any, directory, file, link
-    file_type: directory
-    #depth:
-    #recurse: yes
-    #excludes:
-    #  -
-    #use_regex: yes
-    #hidden: yes
-  register: find_bin_result
-
 - name: "<r_common_t_common> template a file to /etc/profile.d/{{ package['alias'] }}.sh"
   template:
     src: "{{ package['alias'] }}.sh.j2"
