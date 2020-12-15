@@ -3,10 +3,6 @@
 
 deploy_root:
 
-# FROM TASK: "<r_get_pkg_t_copy_local> copy a {{ package_tarball }} to /tmp/"
-# FROM TASK: "<r_get_pkg_t_copy_remote> download file {{ package_tarball }}"
-# FROM TASK: "<r_get_pkg_t_common> verify checksum of {{ package_tarball }}"
-
 # JDK Pacakge Name:
 #   - Adopt OpenJDK         https://github.com/AdoptOpenJDK/openjdk8-binaries/releases
 #   - Alibaba Dragonwell    https://github.com/alibaba/dragonwell8/releases
@@ -18,6 +14,7 @@ package:
   name:
   alias:
   version:
+  dgst_algo:
   checksum:
   # Choices: source, binary
   type:
@@ -26,6 +23,3 @@ package_fullname: "{{ package['name'] }}-{{ package['version'] }}"
 package_tarball:
 
 package_url:
-
-# FROM TASK: "<r_get_pkg_t_common> calculate checksum of {{ package_tarball }}"
-dgst_algo:
